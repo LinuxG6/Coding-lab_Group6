@@ -27,6 +27,22 @@ archive_dir="water_data_archive"
 archive_file="$archive_dir/water_usage_$timestamp.log"
 ;;
 *) echo "Invalid choice.Please enter 1,2,3."
-exit1
+exit 1
 ;;
 esac
+
+#check if the selected log file exists
+if [ ! -f "$log_file" ]; then
+	echo " Error: Log file not found at $log_file"
+	exit 1
+fi
+#Creat the achrive directory if it doesn't exist
+mkdir -p "$archive_file"
+
+# Move the active log to the archive with timestamped name
+mv "$log_file" "$archive_file" || { echo "Error: Could not move $log_file.";exit 1; }
+echo "Achrived $log_file to $archive_file"
+
+#Create a new empty log file
+touch "$log_file"
+echo "Created a new empty $log_file for continued logging."
