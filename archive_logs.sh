@@ -1,5 +1,7 @@
 #!/bin/bash
+continue_archiving="y"
 # menu for log selection
+while [[ "$continue_archiving" == "y" || "$continue_archiving" == "Y" ]]; do
 echo "Select log to archive:"
 echo "1) Heart Rate"
 echo "2) Temperature"
@@ -27,14 +29,14 @@ archive_dir="water_data_archive"
 archive_file="$archive_dir/water_usage_$timestamp.log"
 ;;
 *) echo "Invalid choice.Please enter 1,2,3."
-exit 1
+continue
 ;;
 esac
 
 #check if the selected log file exists
 if [ ! -f "$log_file" ]; then
 	echo " Error: Log file not found at $log_file"
-	exit 1
+continue
 fi
 #Create the achrive directory if it doesn't exist
 mkdir -p "$archive_file"
@@ -45,3 +47,7 @@ mv "$log_file" "$archive_file"
 #Create a new empty log file
 touch "$log_file"
 echo "Successfully archived to $archive_file"
+ # Ask to continue
+    read -p "Do you want to archive another log? (y/n): " continue_archiving
+done
+echo " Exiting log archiver. Goodbye!"
