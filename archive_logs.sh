@@ -36,13 +36,12 @@ if [ ! -f "$log_file" ]; then
 	echo " Error: Log file not found at $log_file"
 	exit 1
 fi
-#Creat the achrive directory if it doesn't exist
+#Create the achrive directory if it doesn't exist
 mkdir -p "$archive_file"
 
 # Move the active log to the archive with timestamped name
-mv "$log_file" "$archive_file" || { echo "Error: Could not move $log_file.";exit 1; }
-echo "Achrived $log_file to $archive_file"
+mv "$log_file" "$archive_file"
 
 #Create a new empty log file
 touch "$log_file"
-echo "Created a new empty $log_file for continued logging."
+echo "Successfully archived to $archive_file"
