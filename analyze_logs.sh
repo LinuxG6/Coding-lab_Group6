@@ -1,4 +1,5 @@
 #!/bin/bash
+echo ""
 echo "Which log do you want to analyze?"
 echo "1) Heart Rate"
 echo "2) Temperature"
@@ -9,11 +10,11 @@ if [ "$choice" != "1" ] && [ "$choice" != "2" ] && [ "$choice" != "3" ]; then
     exit
 fi
 if [ "$choice" == "1" ]; then
-    logfile="hospital_data/active_logs/heart_rate.log"
+    logfile="hospital_data/active_logs/heart_rate_log.log"
 elif [ "$choice" == "2" ]; then
-    logfile="hospital_data/active_logs/temperature.log"
+    logfile="hospital_data/active_logs/temperature_log.log"
 else
-    logfile="hospital_data/active_logs/water_usage.log"
+    logfile="hospital_data/active_logs/water_usage_log.log"
 fi
 
 #see if the file to be analysed exists
@@ -23,4 +24,35 @@ if [ ! -f "$logfile" ]; then
     exit 1
 fi
 
+#Then Analysis starts
+echo ""
+echo "Analyzing $logname log..."
+echo "------------------------------------------"
 
+#Counting occurences of each device
+
+echo "Device Counts:"
+awk '{print $3}' "$logfile" | sort | uniq -c
+
+#First and last time stamp
+
+echo ""
+echo "Timestamp Summary (Bonus):"
+
+# First, get a list of unique devices
+devices=$(awk '{print $3}' "$logfile" | sort | uniq)
+
+for dev in $devices; do
+    # Filter log lines for this device
+    dev_lines=$(grep "$dev" "$logfile")
+
+    # Get first timestamp for the device
+    first_ts=$(echo "$dev_lines" | head -1 | awk '{print $1"_"$2}')
+
+    # Get last timestamp for the device
+    last_ts=$(echo "$dev_lines" | tail -1 | awk '{print $1"_"$2}')
+
+    # Print nicely
+    echo "$dev -> First: $first_ts | Last: $last_ts"
+done
+echo ""
