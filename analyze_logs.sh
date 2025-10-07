@@ -16,3 +16,11 @@ else
     logfile="hospital_data/active_logs/water_usage.log"
 fi
 
+#see if the file to be analysed exists
+
+if [ ! -f "$logfile" ]; then
+    echo "Error: Log file '$logfile' not found!"
+    exit 1
+fi
+
+
