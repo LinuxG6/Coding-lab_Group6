@@ -56,3 +56,33 @@ for dev in $devices; do
     echo "$dev -> First: $first_ts | Last: $last_ts"
 done
 echo ""
+
+# ----------------------------
+# Save results to report
+# ----------------------------
+report_file="hospital_data/reports/analysis_report.txt"
+
+{
+    echo "------------------------------------------"
+    echo "Analysis Report - $logname"
+    echo "Date: $(date)"
+    echo "------------------------------------------"
+    
+    echo "Device Counts:"
+    awk '{print $3}' "$logfile" | sort | uniq -c
+    
+    echo ""
+    echo "Timestamp Summary:"
+    for dev in $devices; do
+        dev_lines=$(grep "$dev" "$logfile")
+        first_ts=$(echo "$dev_lines" | head -1 | awk '{print $1"_"$2}')
+        last_ts=$(echo "$dev_lines" | tail -1 | awk '{print $1"_"$2}')
+        echo "$dev -> First: $first_ts | Last: $last_ts"
+    done
+    
+    echo ""
+} >> "$report_file"
+
+echo ""
+echo "✅ Analysis complete! Results appended to $report_file"
+echo ""
