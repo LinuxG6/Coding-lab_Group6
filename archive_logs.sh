@@ -50,4 +50,4 @@ echo "Successfully archived to $archive_file"
  # Ask to continue
     read -p "Do you want to archive another log? (y/n): " continue_archiving
 done
-echo " Exiting log archiver. Goodbye!"
+echo "Exiting log archiver. Goodbye!"
