@@ -1,0 +1,34 @@
+------------------------------------------
+Analysis Report - 
+Date: Wed 08 Oct 2025 02:06:50 AM PDT
+------------------------------------------
+Device Counts:
+  28862 HeartRate_Monitor_A
+  28862 HeartRate_Monitor_B
+
+Timestamp Summary:
+HeartRate_Monitor_A -> First: 2025-10-07_06:39:32 | Last: 2025-10-07_14:41:05
+HeartRate_Monitor_B -> First: 2025-10-07_06:39:32 | Last: 2025-10-07_14:41:05
+
+------------------------------------------
+Analysis Report - 
+Date: Wed 08 Oct 2025 02:09:30 AM PDT
+------------------------------------------
+Device Counts:
+  28855 Temp_Recorder_A
+  28855 Temp_Recorder_B
+
+Timestamp Summary:
+Temp_Recorder_A -> First: 2025-10-07_06:39:40 | Last: 2025-10-07_14:41:06
+Temp_Recorder_B -> First: 2025-10-07_06:39:40 | Last: 2025-10-07_14:41:06
+
+------------------------------------------
+Analysis Report - 
+Date: Wed 08 Oct 2025 02:11:06 AM PDT
+------------------------------------------
+Device Counts:
+  28850 Water_Consumption_Meter
+
+Timestamp Summary:
+Water_Consumption_Meter -> First: 2025-10-07_06:39:45 | Last: 2025-10-07_14:41:06
+
