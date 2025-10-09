@@ -12,22 +12,22 @@ The system automates the workflow in three main steps:
 ---
 
 ## Project Structure
+
 project/
 │
-├── logs/ # Active log files to be analyzed
-│ ├── heart_rate.log
-│ ├── temperature.log
-│ └── water_usage.log
+├── logs/                     # Active log files to be analyzed
+│   ├── heart_rate.log
+│   ├── temperature.log
+│   └── water_usage.log
 │
-├── archive/ # Archived logs
+├── archive/                  # Archived logs
 │
-├── reports/ # Analysis reports
-│ └── analysis_report.txt
+├── reports/                  # Analysis reports
+│   └── analysis_report.txt
 │
-├── archive_logs.sh # Script for archiving logs
-├── analyze_logs.sh # Script for analyzing logs and generating reports
-└── README.md # Project documentation
-
+├── archive_logs.sh           # Script for archiving logs
+├── analyze_logs.sh           # Script for analyzing logs and generating reports
+└── README.md                 # Project documentation
 
 ---
 
