@@ -84,5 +84,5 @@ report_file="hospital_data/reports/analysis_report.txt"
 } >> "$report_file"
 
 echo ""
-echo "✅ Analysis complete! Results appended to $report_file"
+echo "Analysis complete! Results appended to $report_file"
 echo ""
