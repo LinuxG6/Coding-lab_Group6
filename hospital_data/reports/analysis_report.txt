@@ -32,3 +32,39 @@ Device Counts:
 Timestamp Summary:
 Water_Consumption_Meter -> First: 2025-10-07_06:39:45 | Last: 2025-10-07_14:41:06
 
+------------------------------------------
+Analysis Report - 
+Date: Thu Oct  9 09:47:44 UTC 2025
+------------------------------------------
+Device Counts:
+
+Timestamp Summary:
+
+------------------------------------------
+Analysis Report - 
+Date: Thu Oct  9 09:48:54 UTC 2025
+------------------------------------------
+Device Counts:
+
+Timestamp Summary:
+
+------------------------------------------
+Analysis Report - 
+Date: Thu Oct  9 09:49:19 UTC 2025
+------------------------------------------
+Device Counts:
+
+Timestamp Summary:
+
+------------------------------------------
+Analysis Report - 
+Date: Thu Oct  9 10:33:35 UTC 2025
+------------------------------------------
+Device Counts:
+     40 HeartRate_Monitor_A
+     40 HeartRate_Monitor_B
+
+Timestamp Summary:
+HeartRate_Monitor_A -> First: 2025-10-09_10:32:56 | Last: 2025-10-09_10:33:35
+HeartRate_Monitor_B -> First: 2025-10-09_10:32:56 | Last: 2025-10-09_10:33:35
+
