@@ -54,7 +54,7 @@ Select log to archive:
 Enter choice (1-3): 2
 Temperature log archived successfully to archive/temperature_2025-10-09.log
 
-2️⃣ Analyzing Logs (analyze_logs.sh)
+*** 2. Analyzing Logs (analyze_logs.sh)
 
 Purpose:
 1. Counts the number of occurrences for each device in a log file.
@@ -69,7 +69,7 @@ Device          Count      First Entry               Last Entry
 DeviceA         15         2025-10-09 12:00:01       2025-10-09 14:42:33
 DeviceB         9          2025-10-09 12:03:22       2025-10-09 13:51:20
 
-3️⃣ Reporting
+3️. Reporting
 
 All analysis results are appended to reports/analysis_report.txt.
 Maintains historical records of device activity and log insights.
